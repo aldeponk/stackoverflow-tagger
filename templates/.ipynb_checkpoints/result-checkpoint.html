@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>OC Certification ML Engineer - Stackoverflow tagger</title>
+        <link rel="icon" href="/static/stackoverflow.png">
+    </head>
+
+    <body>
+
+
+    <div style="text-align:center;margin-top: 85px;">
+        <div>
+            <label for="post" style="font-size: 20px; margin-top: 2px;font-weight: bold;">Question Stackoverflow: </label>            
+        </div>
+        <div>
+            <textarea name="post" style="font-size: 18px; margin-top: 2px;" rows="8" cols="50">{{post}}</textarea>            
+        </div>
+
+        <div style="text-align:center;width: 100%">
+            <span style="font-size: 30px; text-align:center;background-color:grey;">Tags suggérés (supervisé)</span>
+            <div style="text-align:center;">            
+                <!--span name="result" style="font-size: 24px; margin-top: 2px;">{{result}}</span-->       
+                <ul style="font-size: 24px; margin-top: 2px;list-style-type: none;">
+                {%for i in range(0, len_supervised)%}
+                    <li>{{result_supervised[i]}}</li>
+                {%endfor%}                
+                </ul>
+            </div>
+        </div>
+        <div style="text-align:center;width: 100%">
+            <span style="font-size: 30px; text-align:center;background-color:grey;">Tags suggérés (non supervisé)</span>
+            <div style="text-align:center;">            
+                <!--span name="result" style="font-size: 24px; margin-top: 2px;">{{result}}</span-->       
+                <ul style="font-size: 24px; margin-top: 2px;list-style-type: none;">
+                {%for i in range(0, len_unsupervised)%}
+                    <li>{{result_unsupervised[i]}}</li>
+                {%endfor%}                
+                </ul>
+            </div>
+        </div>
+
+        <div style="text-align:center;margin-top: 65px;">
+            <input type="image" src="/static/back.png" border="0" alt="Submit" width="50px" onclick="back()">
+            <script>
+                function back(){
+                    window.location.href = "http://localhost:5000/form"
+                }
+            </script>
+        </div>
+    </div>
+        
+    </body>
+</html>
