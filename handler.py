@@ -17,6 +17,7 @@ import gensim
 from gensim import corpora, models
 from gensim.utils import simple_preprocess
 from gensim.models import CoherenceModel
+import pandas as pd
 
 from sklearn.preprocessing import MultiLabelBinarizer
 from sklearn.multiclass import OneVsRestClassifier
