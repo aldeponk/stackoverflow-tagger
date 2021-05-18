@@ -15,15 +15,16 @@ from nltk.tokenize import word_tokenize
 
 import gensim
 from gensim import corpora, models
-from pprint import pprint
 from gensim.utils import simple_preprocess
 from gensim.models import CoherenceModel
-import pandas as pd
 
 from sklearn.preprocessing import MultiLabelBinarizer
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.ensemble import BaggingClassifier
 
+nltk.download('wordnet')
+nltk.download('punkt')
+nltk.download('stopwords')
 
 """
 -----------------------------------------------------------------
@@ -146,9 +147,9 @@ supervised prediction function
 """
 def supervised_prediction(post):
     
-    model = pickle.load(open('./../models/bagClassifier.obj', 'rb'))
-    vectorizer = pickle.load(open('./../models/vectorizer.obj', 'rb'))
-    mlb = pickle.load(open('./../models/mlb.obj', 'rb'))
+    model = pickle.load(open('models/bagClassifier.obj', 'rb'))
+    vectorizer = pickle.load(open('models/vectorizer.obj', 'rb'))
+    mlb = pickle.load(open('models/mlb.obj', 'rb'))
     tags = supervised_predict(post, vectorizer, model)
     all_labels = mlb.inverse_transform(tags)
     output_tags = ""
@@ -200,9 +201,9 @@ unsupervised prediction function
 """
 def unsupervised_prediction(post):
     
-    lda_tags_df_scaled = pickle.load(open('./../models/lda_tags_df_scaled.obj', 'rb'))
-    lda = gensim.models.LdaMulticore.load('./../models/lda_model_tfidf_optimized_2')    
-    dictionary = pickle.load(open('./../models/dictionary.obj', 'rb'))   
+    lda_tags_df_scaled = pickle.load(open('models/lda_tags_df_scaled.obj', 'rb'))
+    lda = gensim.models.LdaMulticore.load('models/lda_model_tfidf_optimized_2')    
+    dictionary = pickle.load(open('models/dictionary.obj', 'rb'))   
     
         
     tags_output = unsupervised_predict(post, lda_tags_df_scaled, dictionary, lda)
