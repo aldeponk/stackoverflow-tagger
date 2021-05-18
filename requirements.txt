@@ -5,7 +5,7 @@ argon2-cffi==20.1.0
 asgiref==3.3.1
 asn1crypto==1.4.0
 astroid==2.4.2
-astropy==4.0.2
+#astropy==4.0.2
 astunparse==1.6.3
 async-generator==1.10
 atomicwrites==1.4.0
@@ -25,7 +25,7 @@ bleach==3.2.1
 blis==0.7.4
 bokeh==2.2.3
 boto==2.49.0
-Bottleneck==1.3.2
+#Bottleneck==1.3.2
 branca==0.4.2
 brotlipy==0.7.0
 cachetools==4.2.1
@@ -105,8 +105,8 @@ joblib==0.17.0
 json5==0.9.5
 jsonschema==3.2.0
 #kaggle==1.5.12
-Keras==2.4.3
-Keras-Preprocessing==1.1.2
+#Keras==2.4.3
+#Keras-Preprocessing==1.1.2
 #keyring==21.4.0
 #kiwisolver==1.3.0
 #langdetect==1.0.7
@@ -216,7 +216,7 @@ pickleshare==0.7.5
 #rsa==4.7.2
 #Rtree==0.9.4
 #ruamel-yaml==0.15.87
-scikit-image==0.17.2
+#scikit-image==0.17.2
 scikit-learn==0.23.2
 scipy==1.5.2
 #seaborn==0.11.0
