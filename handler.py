@@ -3,6 +3,11 @@ import json
 
 import pickle
 import nltk
+
+#nltk.download('wordnet')
+#nltk.download('punkt')
+#nltk.download('stopwords')
+
 import nltk.data
 from nltk.tag import pos_tag
 from nltk.tokenize import word_tokenize
@@ -23,9 +28,6 @@ from sklearn.preprocessing import MultiLabelBinarizer
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.ensemble import BaggingClassifier
 
-nltk.download('wordnet')
-nltk.download('punkt')
-nltk.download('stopwords')
 
 """
 -----------------------------------------------------------------
